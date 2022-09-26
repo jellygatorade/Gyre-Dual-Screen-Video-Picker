@@ -121,16 +121,17 @@ function createVideoDataArray(data) {
 
   // Place unmatched pairs at the end of the array
   // This will make them the last cards in the DOM, as they will be applied last in applyVideoCards
-  // https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
-  //
-  // This is currently written inaccurately.
-  // Changing the order of the array while looping through it means not necessarily each entry will be accessed.
-  //
-  for (let i = 0; i < videoDataArray.length; i++) {
-    if (!videoDataArray[i].en || !videoDataArray[i].es) {
-      videoDataArray.push(videoDataArray.splice(i, 1)[0]);
+  // https://stackoverflow.com/questions/42479079/move-a-particular-value-object-in-array-to-end
+  videoDataArray = videoDataArray.sort((a, b) => {
+    if (!a.en || !a.es) {
+      return 1; // means a is greater than b -> a will be move to a higher index than b
+    } else if (a.en && a.es && b.en && b.es) {
+      return 0; // means a is equal to b -> no change will be made.
+    } else if (a.en && a.es && (!b.en || !b.es)) {
+      return -1; // means a is less than b -> a will be move to a lower index than b
     }
-  }
+  });
+  //console.log(videoDataArray);
 
   return videoDataArray;
 }
