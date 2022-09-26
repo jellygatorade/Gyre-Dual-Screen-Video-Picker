@@ -1,0 +1,92 @@
+{
+  "attract_video_path": "../common/assets/video/AfricanVoices_HomeVideo.mp4",
+  "en": {
+    "attract": {
+      "title": "Franz Kafka?",
+      "touch_to_begin": "TOUCH TO BEGIN"
+    },
+    "main": {
+      "title": "Franz Kafka?",
+      "subheading": "Franz Kafka? Select one of the videos below to learn about its significance to art in the Americas.",
+      "toggle_lang_btn": "Español",
+      "videos": [
+        {
+          "id": "ee56f624-3aad-11ed-a261-0242ac120002",
+          "video_path": "../common/assets/video/AfricanVoices_HomeVideo.mp4",
+          "still_path": "../common/assets/img/creativitycover_2880x1800.png",
+          "title": "Who Is Gregor Samsa?",
+          "description": "One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin."
+        },
+        {
+          "id": "ee56fd18-3aad-11ed-a261-0242ac120002",
+          "video_path": "../common/assets/video/HulahoopingWithMarawa.mp4",
+          "still_path": "../common/assets/img/2_1280x720",
+          "title": "Tracking History",
+          "description": "He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections."
+        },
+        {
+          "id": "extra-en-1",
+          "video_path": "",
+          "still_path": "../common/assets/img/1_1280x720",
+          "title": "Unmatched English video",
+          "description": "Unmatched English video"
+        },
+        {
+          "id": "ee56ff2a-3aad-11ed-a261-0242ac120002",
+          "video_path": "",
+          "still_path": "../common/assets/img/1_1280x720",
+          "title": "Modern Context for a Historical Figure",
+          "description": "The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. \"What's happened to me?\" he thought. It wasn't a dream."
+        }
+      ]
+    },
+    "video_player": {
+      "back_to_main": "[Back to main]"
+    }
+  },
+  "es": {
+    "is_available": true,
+    "attract": {
+      "title": "!¿Franz Kafka?",
+      "touch_to_begin": "TOCA PARA COMENZAR"
+    },
+    "main": {
+      "title": "!¿Franz Kafka?",
+      "subheading": "!¿Franz Kafka? Seleccione uno de los videos a continuación para conocer su importancia para el arte en las Américas.",
+      "toggle_lang_btn": "English",
+      "videos": [
+        {
+          "id": "ee56f624-3aad-11ed-a261-0242ac120002",
+          "video_path": "../common/assets/video/SenegaleseFashion.mp4",
+          "still_path": "../common/assets/img/creativitycover_2880x1800.png",
+          "title": "!¿Quién es Gregor Samsa?",
+          "description": "!Una mañana, cuando Gregor Samsa despertó de un sueño inquietante, se encontró transformado en su cama en una horrible alimaña."
+        },
+        {
+          "id": "extra-es-1",
+          "video_path": "",
+          "still_path": "../common/assets/img/1_1280x720",
+          "title": "Unmatched Spanish video",
+          "description": "Unmatched Spanish video"
+        },
+        {
+          "id": "ee56fd18-3aad-11ed-a261-0242ac120002",
+          "video_path": "../common/assets/video/Speed Stick.mp4",
+          "still_path": "../common/assets/img/2_1280x720",
+          "title": "!Historial de seguimiento",
+          "description": "!Yacía sobre su espalda como una armadura, y si levantaba un poco la cabeza podía ver su vientre marrón, ligeramente abovedado y dividido por arcos en secciones rígidas."
+        },
+        {
+          "id": "ee56ff2a-3aad-11ed-a261-0242ac120002",
+          "video_path": "",
+          "still_path": "../common/assets/img/1_1280x720",
+          "title": "!Contexto moderno para una figura histórica",
+          "description": "!La ropa de cama apenas podía cubrirlo y parecía estar lista para deslizarse en cualquier momento. Sus muchas piernas, lastimosamente delgadas en comparación con el tamaño del resto de él, se agitaban impotentes mientras miraba. \"¿Qué me ha pasado?\" pensó. No fue un sueño."
+        }
+      ]
+    },
+    "video_player": {
+      "back_to_main": "![Volver]"
+    }
+  }
+}

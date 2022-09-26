@@ -1,0 +1,4 @@
+npm start
+npx tailwindcss -i ./src/common/style/tailwind-input.css -o ./src/common/style/tailwind-compiled.css --watch
+
+\src\common\assets\content.json
