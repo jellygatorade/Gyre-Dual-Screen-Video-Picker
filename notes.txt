@@ -2,3 +2,16 @@ npm start
 npx tailwindcss -i ./src/common/style/tailwind-input.css -o ./src/common/style/tailwind-compiled.css --watch
 
 \src\common\assets\content.json
+
+---
+
+Existing bug in video card re-ordering
+
+See note in apply-content-ui-video-cards.js, copied below
+
+// Place unmatched pairs at the end of the array
+// This will make them the last cards in the DOM, as they will be applied last in applyVideoCards
+// https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
+//
+// This is currently written inaccurately.
+// Changing the order of the array while looping through it means not necessarily each entry will be accessed.
