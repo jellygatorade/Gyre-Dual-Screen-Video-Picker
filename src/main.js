@@ -57,8 +57,8 @@ const createWindows = () => {
     selectionWindow.webContents.toggleDevTools();
   });
 
-  // Create the video window if external display is available
   if (firstExternalDisplay) {
+    // If external display is available, create the video window in fullscreen mode on the second display
     videoWindow = new BrowserWindow({
       x: firstExternalDisplay.bounds.x,
       y: firstExternalDisplay.bounds.y,
@@ -83,10 +83,34 @@ const createWindows = () => {
     globalShortcut.register("Control+Shift+O", () => {
       videoWindow.webContents.toggleDevTools();
     });
+  } else {
+    // If external display is not available, create a windowed video on the first display
+    videoWindow = new BrowserWindow({
+      x: 50,
+      y: 50,
+      fullscreen: false,
+      webPreferences: {
+        nodeIntegration: false, // is default value after Electron v5
+        contextIsolation: true, // protect against prototype pollution
+        enableRemoteModule: false, // turn off remote
+        preload: path.join(
+          __dirname,
+          "/VideoView/script/preload-video-view.js"
+        ),
+      },
+    });
 
-    // No application (top bar) menu
-    Menu.setApplicationMenu(null);
+    // and load the index.html of the app.
+    videoWindow.loadFile(path.join(__dirname, "/VideoView/index.html"));
+
+    // Register nonstandard "Control+Shift+O" combo to toggle the DevTools on video window
+    globalShortcut.register("Control+Shift+O", () => {
+      videoWindow.webContents.toggleDevTools();
+    });
   }
+
+  // No application (top bar) menu
+  Menu.setApplicationMenu(null);
 
   // Register escape key to quit the app
   globalShortcut.register("ESC", function () {
