@@ -16,6 +16,20 @@ contextBridge.exposeInMainWorld("electronAPI", {
     );
   },
 
+  // Similar to above, send the instruction text string initially to the video renderer via main renderer
+  // This is done so that fetch only has to be called once (by selection renderer)
+  sendInstructionalTextStr: (instructionalTextEnEsObj) => {
+    ipcRenderer.send(
+      "instruction-text-string-to-video-renderer",
+      instructionalTextEnEsObj
+    );
+  },
+
+  // Send language choices to video renderer via main renderer
+  sendAppliedLang: (choice) => {
+    ipcRenderer.send("apply-lang-choice-to-video-renderer", choice);
+  },
+
   // For launching a selected video in the video renderer via main renderer
   sendLaunchVideo: (videoPathsObj) => {
     ipcRenderer.send("launch-video", videoPathsObj);

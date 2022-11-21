@@ -17,6 +17,12 @@ function callFetchCreateUI() {
 
       // Send attract video path to main renderer to be sent to video view renderer
       window.electronAPI.sendAttractLoopPath(data.attract_video_path);
+
+      // Send instructional text string to main renderer to be sent to video view renderer
+      window.electronAPI.sendInstructionalTextStr({
+        en: data.en.attract.projection_instruction,
+        es: data.es.attract.projection_instruction,
+      });
     });
 }
 

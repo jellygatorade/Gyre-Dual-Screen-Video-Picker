@@ -540,6 +540,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   z-index: 600;
 }
 
+.z-\[200\] {
+  z-index: 200;
+}
+
 .z-\[150\] {
   z-index: 150;
 }
@@ -547,6 +551,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .block {

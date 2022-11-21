@@ -1,8 +1,17 @@
-import * as domVars from "./global-vars-dom.js";
+import { domVars } from "./global-vars-dom.js";
 import { fadeIn, fadeOut } from "../../common/script/fade-in-out-elements.js";
 
 // Choose the video player volume
 const videoPlayerVolume = 0.5; // 50%
+
+function placeInstructionText(instructionalTextEnEsObj) {
+  if (instructionalTextEnEsObj.en) {
+    domVars.enVideoViewInstructionText.innerHTML = instructionalTextEnEsObj.en;
+  }
+  if (instructionalTextEnEsObj.es) {
+    domVars.esVideoViewInstructionText.innerHTML = instructionalTextEnEsObj.es;
+  }
+}
 
 function createVideoViewAttractLoop(videopath) {
   // Remove "ended" listener if present
@@ -22,6 +31,7 @@ function createVideoViewAttractLoop(videopath) {
 function changeVideoView(videoPathsObj) {
   // Remove old video, fade out, pause, ensure loop and mute are not enabled.
   fadeOut(domVars.videoViewPlayer);
+  fadeOut(domVars.videoViewInstructionTextParent);
   setTimeout(function () {
     domVars.videoViewPlayer.pause();
   }, 500);
@@ -52,7 +62,8 @@ function changeVideoView(videoPathsObj) {
 // See https://stackoverflow.com/questions/256754/how-to-pass-arguments-to-addeventlistener-listener-function
 function onVideoEnd(event) {
   createVideoViewAttractLoop(event.currentTarget.videoLoopRevertPath);
+  fadeIn(domVars.videoViewInstructionTextParent);
   window.electronAPI.sendVideoEnd("A video has ended.");
 }
 
-export { createVideoViewAttractLoop, changeVideoView };
+export { placeInstructionText, createVideoViewAttractLoop, changeVideoView };

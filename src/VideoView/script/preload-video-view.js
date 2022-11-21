@@ -8,8 +8,20 @@ for (const dependency of ["chrome", "node", "electron"]) {
 
 contextBridge.exposeInMainWorld("electronAPI", {
   // For receiving the attract loop path initially from the selection renderer via main renderer
-  onAttractLoopPathRecieved: (attractLoopPath) => {
+  onAttractLoopPathReceived: (attractLoopPath) => {
     ipcRenderer.on("attract-loop-path-to-video-renderer", attractLoopPath);
+  },
+
+  // For receiving the instructional text string initially from the selection renderer via main renderer
+  onInstructionTextStrReceived: (instructionalTextEnEsObj) => {
+    ipcRenderer.on(
+      "instruction-text-string-to-video-renderer",
+      instructionalTextEnEsObj
+    );
+  },
+
+  onLangReceived: (choice) => {
+    ipcRenderer.on("apply-lang-choice-to-video-renderer", choice);
   },
 
   // For launching a selected video from the selection renderer via main renderer

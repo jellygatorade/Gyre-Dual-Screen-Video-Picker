@@ -18,6 +18,24 @@
   <body class="h-full w-full bg-black text-white">
     <!-- Video View -->
     <div id="video-view" class="z-[100] absolute top-0 left-0 h-full w-full">
+      <!-- Instruction Text -->
+      <div
+        id="video-view-instruction-text-parent"
+        class="z-[200] absolute bottom-0 w-full flex flex-row justify-center transition-all duration-500"
+      >
+        <div class="my-8 text-shadow-black-3px">
+          <h1
+            lang="en"
+            id="video-view-en-instruction-text"
+            class="text-6xl font-CaseTextMedium"
+          ></h1>
+          <h1
+            lang="es"
+            id="video-view-es-instruction-text"
+            class="text-6xl font-CaseTextMedium"
+          ></h1>
+        </div>
+      </div>
       <!-- Video player -->
       <video
         id="video-view-player"

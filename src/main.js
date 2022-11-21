@@ -156,6 +156,22 @@ ipcMain.on(
   sendAttractLoopPathToVideoRenderer
 );
 
+function sendInstructionTextToVideoRenderer(event, instructionalTextEnEsObj) {
+  videoWindow.webContents.send(
+    "instruction-text-string-to-video-renderer",
+    instructionalTextEnEsObj
+  );
+}
+ipcMain.on(
+  "instruction-text-string-to-video-renderer",
+  sendInstructionTextToVideoRenderer
+);
+
+function applyLangToVideoRenderer(event, choice) {
+  videoWindow.webContents.send("apply-lang-choice-to-video-renderer", choice);
+}
+ipcMain.on("apply-lang-choice-to-video-renderer", applyLangToVideoRenderer);
+
 function launchVideoView(event, videoPathsObj) {
   videoWindow.webContents.send("use-video-path", videoPathsObj);
 }

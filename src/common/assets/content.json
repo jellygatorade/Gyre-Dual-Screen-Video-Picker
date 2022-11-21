@@ -2,6 +2,7 @@
   "attract_video_path": "../common/assets/video/AfricanVoices_HomeVideo.mp4",
   "en": {
     "attract": {
+      "projection_instruction": "Instruction",
       "title": "Franz Kafka?",
       "touch_to_begin": "TOUCH TO BEGIN"
     },
@@ -47,6 +48,7 @@
   "es": {
     "is_available": true,
     "attract": {
+      "projection_instruction": "!instrucción",
       "title": "!¿Franz Kafka?",
       "touch_to_begin": "TOCA PARA COMENZAR"
     },

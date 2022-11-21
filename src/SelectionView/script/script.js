@@ -15,6 +15,7 @@ if (localStorage.getItem("langState")) {
 
 // Apply the language specified in current "langState"
 applyLanguage(lang.langState);
+window.electronAPI.sendAppliedLang(lang.langState);
 
 // Set up listener for onVideoEnd
 window.electronAPI.onVideoEnd((event, msg) => {
